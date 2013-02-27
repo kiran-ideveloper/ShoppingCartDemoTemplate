@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D18F0FF716DE087F00099129 /* Level2_CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F0FF616DE087F00099129 /* Level2_CVCell.m */; };
+		D18F0FFB16DE09B000099129 /* Level2_CVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F0FFA16DE09B000099129 /* Level2_CVC.m */; };
+		D18F0FFE16DE324000099129 /* ThumbnailCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F0FFD16DE324000099129 /* ThumbnailCVCell.m */; };
+		D18F100116DE35A300099129 /* products.png in Resources */ = {isa = PBXBuildFile; fileRef = D18F0FFF16DE35A300099129 /* products.png */; };
+		D18F100216DE35A300099129 /* Thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = D18F100016DE35A300099129 /* Thumbnail.png */; };
+		D18F100416DE36AB00099129 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18F100316DE36AB00099129 /* QuartzCore.framework */; };
 		D19C26A116DDC82800379EF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19C26A016DDC82800379EF5 /* UIKit.framework */; };
 		D19C26A316DDC82800379EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19C26A216DDC82800379EF5 /* Foundation.framework */; };
 		D19C26A516DDC82800379EF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19C26A416DDC82800379EF5 /* CoreGraphics.framework */; };
@@ -19,9 +25,23 @@
 		D19C26BA16DDC82800379EF5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19C26B816DDC82800379EF5 /* MainStoryboard_iPhone.storyboard */; };
 		D19C26BD16DDC82800379EF5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19C26BB16DDC82800379EF5 /* MainStoryboard_iPad.storyboard */; };
 		D19C26C016DDC82800379EF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C26BF16DDC82800379EF5 /* ViewController.m */; };
+		D19C26C716DDD43200379EF5 /* RegistrationCells.png in Resources */ = {isa = PBXBuildFile; fileRef = D19C26C616DDD43200379EF5 /* RegistrationCells.png */; };
+		D19C26CA16DDD63100379EF5 /* LoginCells.png in Resources */ = {isa = PBXBuildFile; fileRef = D19C26C916DDD63100379EF5 /* LoginCells.png */; };
+		D19C26CD16DDDC7E00379EF5 /* Catelog_Level_1_CVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C26CC16DDDC7E00379EF5 /* Catelog_Level_1_CVC.m */; };
+		D19C26CF16DDE40200379EF5 /* CatalogLevel1.png in Resources */ = {isa = PBXBuildFile; fileRef = D19C26CE16DDE40200379EF5 /* CatalogLevel1.png */; };
+		D19C26D516DDE58100379EF5 /* Catalog_Level_1_CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C26D416DDE58100379EF5 /* Catalog_Level_1_CVCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D18F0FF516DE087F00099129 /* Level2_CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2_CVCell.h; sourceTree = "<group>"; };
+		D18F0FF616DE087F00099129 /* Level2_CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2_CVCell.m; sourceTree = "<group>"; };
+		D18F0FF916DE09B000099129 /* Level2_CVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2_CVC.h; sourceTree = "<group>"; };
+		D18F0FFA16DE09B000099129 /* Level2_CVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2_CVC.m; sourceTree = "<group>"; };
+		D18F0FFC16DE324000099129 /* ThumbnailCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailCVCell.h; sourceTree = "<group>"; };
+		D18F0FFD16DE324000099129 /* ThumbnailCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailCVCell.m; sourceTree = "<group>"; };
+		D18F0FFF16DE35A300099129 /* products.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = products.png; sourceTree = "<group>"; };
+		D18F100016DE35A300099129 /* Thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumbnail.png; sourceTree = "<group>"; };
+		D18F100316DE36AB00099129 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D19C269C16DDC82800379EF5 /* StreetCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19C26A016DDC82800379EF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D19C26A216DDC82800379EF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +59,13 @@
 		D19C26BC16DDC82800379EF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D19C26BE16DDC82800379EF5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D19C26BF16DDC82800379EF5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D19C26C616DDD43200379EF5 /* RegistrationCells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RegistrationCells.png; sourceTree = "<group>"; };
+		D19C26C916DDD63100379EF5 /* LoginCells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginCells.png; sourceTree = "<group>"; };
+		D19C26CB16DDDC7E00379EF5 /* Catelog_Level_1_CVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catelog_Level_1_CVC.h; sourceTree = "<group>"; };
+		D19C26CC16DDDC7E00379EF5 /* Catelog_Level_1_CVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catelog_Level_1_CVC.m; sourceTree = "<group>"; };
+		D19C26CE16DDE40200379EF5 /* CatalogLevel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CatalogLevel1.png; sourceTree = "<group>"; };
+		D19C26D316DDE58100379EF5 /* Catalog_Level_1_CVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catalog_Level_1_CVCell.h; sourceTree = "<group>"; };
+		D19C26D416DDE58100379EF5 /* Catalog_Level_1_CVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catalog_Level_1_CVCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18F100416DE36AB00099129 /* QuartzCore.framework in Frameworks */,
 				D19C26A116DDC82800379EF5 /* UIKit.framework in Frameworks */,
 				D19C26A316DDC82800379EF5 /* Foundation.framework in Frameworks */,
 				D19C26A516DDC82800379EF5 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +103,7 @@
 		D19C269F16DDC82800379EF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D18F100316DE36AB00099129 /* QuartzCore.framework */,
 				D19C26A016DDC82800379EF5 /* UIKit.framework */,
 				D19C26A216DDC82800379EF5 /* Foundation.framework */,
 				D19C26A416DDC82800379EF5 /* CoreGraphics.framework */,
@@ -91,6 +120,17 @@
 				D19C26BB16DDC82800379EF5 /* MainStoryboard_iPad.storyboard */,
 				D19C26BE16DDC82800379EF5 /* ViewController.h */,
 				D19C26BF16DDC82800379EF5 /* ViewController.m */,
+				D19C26CB16DDDC7E00379EF5 /* Catelog_Level_1_CVC.h */,
+				D19C26CC16DDDC7E00379EF5 /* Catelog_Level_1_CVC.m */,
+				D19C26D316DDE58100379EF5 /* Catalog_Level_1_CVCell.h */,
+				D19C26D416DDE58100379EF5 /* Catalog_Level_1_CVCell.m */,
+				D18F0FF516DE087F00099129 /* Level2_CVCell.h */,
+				D18F0FF616DE087F00099129 /* Level2_CVCell.m */,
+				D18F0FF916DE09B000099129 /* Level2_CVC.h */,
+				D18F0FFA16DE09B000099129 /* Level2_CVC.m */,
+				D18F0FFC16DE324000099129 /* ThumbnailCVCell.h */,
+				D18F0FFD16DE324000099129 /* ThumbnailCVCell.m */,
+				D19C26C816DDD43D00379EF5 /* images */,
 				D19C26A716DDC82800379EF5 /* Supporting Files */,
 			);
 			path = StreetCat;
@@ -108,6 +148,18 @@
 				D19C26B616DDC82800379EF5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D19C26C816DDD43D00379EF5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D18F0FFF16DE35A300099129 /* products.png */,
+				D18F100016DE35A300099129 /* Thumbnail.png */,
+				D19C26CE16DDE40200379EF5 /* CatalogLevel1.png */,
+				D19C26C916DDD63100379EF5 /* LoginCells.png */,
+				D19C26C616DDD43200379EF5 /* RegistrationCells.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +219,11 @@
 				D19C26B716DDC82800379EF5 /* Default-568h@2x.png in Resources */,
 				D19C26BA16DDC82800379EF5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				D19C26BD16DDC82800379EF5 /* MainStoryboard_iPad.storyboard in Resources */,
+				D19C26C716DDD43200379EF5 /* RegistrationCells.png in Resources */,
+				D19C26CA16DDD63100379EF5 /* LoginCells.png in Resources */,
+				D19C26CF16DDE40200379EF5 /* CatalogLevel1.png in Resources */,
+				D18F100116DE35A300099129 /* products.png in Resources */,
+				D18F100216DE35A300099129 /* Thumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +237,11 @@
 				D19C26AD16DDC82800379EF5 /* main.m in Sources */,
 				D19C26B116DDC82800379EF5 /* AppDelegate.m in Sources */,
 				D19C26C016DDC82800379EF5 /* ViewController.m in Sources */,
+				D19C26CD16DDDC7E00379EF5 /* Catelog_Level_1_CVC.m in Sources */,
+				D19C26D516DDE58100379EF5 /* Catalog_Level_1_CVCell.m in Sources */,
+				D18F0FF716DE087F00099129 /* Level2_CVCell.m in Sources */,
+				D18F0FFB16DE09B000099129 /* Level2_CVC.m in Sources */,
+				D18F0FFE16DE324000099129 /* ThumbnailCVCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +368,7 @@
 				D19C26C516DDC82800379EF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
