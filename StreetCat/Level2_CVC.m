@@ -55,14 +55,14 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (collectionView.tag == 1) {
-        return 20;
-    }
-    else
-    {
-        return 30;
-    }
-    
+//    if (collectionView.tag == 1) {
+//        return 20;
+//    }
+//    else
+//    {
+//        return 30;
+//    }
+    return 10;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -76,10 +76,9 @@
     {
         ThumbnailCVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbnailCellIdentifier" forIndexPath:indexPath];
         cell.thumbnailImageView.image = [UIImage imageNamed:@"Thumbnail.png"];
-        cell.thumbnailImageName.text = @"item name..";
+        cell.thumbnailImageName.text = @"name of product";
         return cell;
     }
-    
 }
 
 
