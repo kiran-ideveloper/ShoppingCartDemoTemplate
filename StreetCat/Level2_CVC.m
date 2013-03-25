@@ -9,8 +9,14 @@
 #import "Level2_CVC.h"
 #import "Level2_CVCell.h"
 #import "ThumbnailCVCell.h"
+#import <QuartzCore/CALayer.h>
+
+
+@class ThumbnailCollectionViewController;
 
 @interface Level2_CVC ()
+
+@property (nonatomic, strong) ThumbnailCollectionViewController *tvc;
 
 @end
 
@@ -29,6 +35,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 140, 40)];
+  //  UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:searchBar];
+    
+ //   UIBarButtonItem *gridViewBarButttonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:nil];
+    
+    
+ //   searchBar.backgroundImage = [[[UIImage alloc] init] autorelease];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBar];
+    
+//    UIBarButtonItem *searchBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchButtonAction:)];
+//    [[self navigationItem] setRightBarButtonItem:searchBarButton animated:YES];
+    
 //    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
 //    searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 //    searchBar.delegate = self;
@@ -36,6 +55,8 @@
 //    searchBarView.autoresizingMask = 0;
 //    [searchBarView addSubview:searchBar];
 //    self.navigationItem.titleView = searchBarView;
+    
+     //  self.ThumbnailContainer
     
 }
 
@@ -62,12 +83,13 @@
 //    {
 //        return 30;
 //    }
-    return 10;
+    return 20;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (collectionView.tag == 1) {
+    
+    if (collectionView.tag == 11) {
         Level2_CVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Level2CellIdentifier" forIndexPath:indexPath];
         cell.imageView.image = [UIImage imageNamed:@"products.png"];
         return cell;
@@ -76,10 +98,24 @@
     {
         ThumbnailCVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbnailCellIdentifier" forIndexPath:indexPath];
         cell.thumbnailImageView.image = [UIImage imageNamed:@"Thumbnail.png"];
+        cell.layer.cornerRadius = 15.0;
         cell.thumbnailImageName.text = @"name of product";
         return cell;
     }
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (collectionView.tag == 22) {
+        
+        UIViewController *contentVC = [[UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil] instantiateViewControllerWithIdentifier:@"ContainerID"];
+        contentVC.view.frame = CGRectMake(20, 175, 640, 785);
+        [self addChildViewController:contentVC];
+        [self.view addSubview:contentVC.view];
+    }
+}
+
+
 
 
 @end

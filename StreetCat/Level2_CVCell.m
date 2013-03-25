@@ -16,6 +16,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        self.layer.cornerRadius = 10;
         // Initialization code
     }
     return self;

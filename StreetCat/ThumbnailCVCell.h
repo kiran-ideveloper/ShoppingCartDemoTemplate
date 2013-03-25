@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ThumbnailCVCell : UICollectionViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @property (strong, nonatomic) IBOutlet UILabel *thumbnailImageName;
 

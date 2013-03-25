@@ -8,6 +8,7 @@
 
 #import "ThumbnailCVCell.h"
 
+
 @implementation ThumbnailCVCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,6 +16,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+      
+        
     }
     return self;
 }
