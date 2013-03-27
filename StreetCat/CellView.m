@@ -27,6 +27,9 @@
 {
     // Drawing code
     
+    self.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.layer.borderWidth = 2.0f;
+    
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 8.0f;
     
@@ -39,7 +42,7 @@
         CGContextAddLineToPoint(currentContext, self.frame.size.width, cellHeight * lines);
     }
     [[UIColor grayColor] set];
-    CGContextSetLineWidth(currentContext, 0.5f);
+    CGContextSetLineWidth(currentContext, 1.0f);
     CGContextStrokePath(currentContext);
 }
 
