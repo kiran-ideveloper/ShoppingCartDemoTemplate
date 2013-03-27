@@ -45,13 +45,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.view removeFromSuperview];
-    [self removeFromParentViewController];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"removeContainer" object:nil];
-}
-
 - (void) moveProgress
 {
     if (self.progressBar.progress < 1.0) {
@@ -73,9 +66,9 @@
     else
     {
         [progressTimer invalidate];
-//        [self.view removeFromSuperview];
-//        [self removeFromParentViewController];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"removeContainer" object:nil];
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"removeContainer" object:nil];
     }
 }
 

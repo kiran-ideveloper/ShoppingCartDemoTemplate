@@ -91,7 +91,7 @@
     
     if (collectionView.tag == 11) {
         Level2_CVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Level2CellIdentifier" forIndexPath:indexPath];
-        cell.imageView.image = [UIImage imageNamed:@"products.png"];
+       // cell.imageView.image = [UIImage imageNamed:@"products.png"];
         return cell;
     }
     else

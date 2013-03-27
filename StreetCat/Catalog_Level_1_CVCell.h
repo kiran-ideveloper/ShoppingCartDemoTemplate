@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Catalog_Level_1_CVCell : UICollectionViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *catalogImage;
 
 @end
