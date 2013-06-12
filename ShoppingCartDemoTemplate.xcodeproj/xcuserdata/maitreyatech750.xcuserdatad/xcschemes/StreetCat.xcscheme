@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D19C269B16DDC82800379EF5"
-               BuildableName = "StreetCat.app"
+               BuildableName = "ShoppingCartDemoTemplate.app"
                BlueprintName = "ShoppingCartDemoTemplate"
                ReferencedContainer = "container:ShoppingCartDemoTemplate.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19C269B16DDC82800379EF5"
-            BuildableName = "StreetCat.app"
+            BuildableName = "ShoppingCartDemoTemplate.app"
             BlueprintName = "ShoppingCartDemoTemplate"
             ReferencedContainer = "container:ShoppingCartDemoTemplate.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19C269B16DDC82800379EF5"
-            BuildableName = "StreetCat.app"
+            BuildableName = "ShoppingCartDemoTemplate.app"
             BlueprintName = "ShoppingCartDemoTemplate"
             ReferencedContainer = "container:ShoppingCartDemoTemplate.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19C269B16DDC82800379EF5"
-            BuildableName = "StreetCat.app"
+            BuildableName = "ShoppingCartDemoTemplate.app"
             BlueprintName = "ShoppingCartDemoTemplate"
             ReferencedContainer = "container:ShoppingCartDemoTemplate.xcodeproj">
          </BuildableReference>
