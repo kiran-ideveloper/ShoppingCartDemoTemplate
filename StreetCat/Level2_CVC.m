@@ -10,11 +10,17 @@
 #import "Level2_CVCell.h"
 #import "ThumbnailCVCell.h"
 #import <QuartzCore/CALayer.h>
+#import "ModalDataBase.h"
+
 
 
 @class ThumbnailCollectionViewController;
 
 @interface Level2_CVC ()
+{
+    ModalDataBase *myModel;
+    //NSArray *catelogTypes;
+}
 
 @property (nonatomic, strong) ThumbnailCollectionViewController *tvc;
 
@@ -35,29 +41,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
+    myModel = [ModalDataBase sharedModel];
+    //   catelogTypes = [[NSArray alloc]init];
+    
+    //catelogTypes = [[myModel.catelog objectForKey:myModel.selectedCatlog] allKeys];
+    
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 140, 40)];
-  //  UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:searchBar];
-    
- //   UIBarButtonItem *gridViewBarButttonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:nil];
-    
-    
- //   searchBar.backgroundImage = [[[UIImage alloc] init] autorelease];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBar];
-    
-//    UIBarButtonItem *searchBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchButtonAction:)];
-//    [[self navigationItem] setRightBarButtonItem:searchBarButton animated:YES];
-    
-//    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
-//    searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-//    searchBar.delegate = self;
-//    UIView *searchBarView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 120, 30)];
-//    searchBarView.autoresizingMask = 0;
-//    [searchBarView addSubview:searchBar];
-//    self.navigationItem.titleView = searchBarView;
-    
-     //  self.ThumbnailContainer
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,40 +67,69 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    if (collectionView.tag == 1) {
-//        return 20;
-//    }
-//    else
-//    {
-//        return 30;
-//    }
-    return 20;
+    if (collectionView.tag == 11)
+    {
+        return  25;
+    }
+    else
+    {
+        return 30;
+    }
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
     if (collectionView.tag == 11) {
+        // to repeat the total catelog types until the number of items.
+        int myIndex = indexPath.row % [[myModel allTypes] count];
+        
         Level2_CVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Level2CellIdentifier" forIndexPath:indexPath];
-       // cell.imageView.image = [UIImage imageNamed:@"products.png"];
+        NSString *requiredType =    [[myModel allTypes] objectAtIndex:myIndex];
+        NSString *firstItem = [[myModel allItemsForKey:requiredType] firstObject];
+        cell.imageView.image = [UIImage imageNamed:firstItem];
+    
         return cell;
     }
     else
     {
+        int myIndex = indexPath.row % ([[myModel allItems] count] - 1);
+        
         ThumbnailCVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"thumbnailCellIdentifier" forIndexPath:indexPath];
-        cell.thumbnailImageView.image = [UIImage imageNamed:@"Thumbnail.png"];
+        NSString *itemName = [[myModel allItems] objectAtIndex:myIndex];
+        cell.thumbnailImageView.image = [UIImage imageNamed:itemName];
         cell.layer.cornerRadius = 15.0;
-        cell.thumbnailImageName.text = @"name of product";
+        cell.thumbnailImageName.text = itemName;
         return cell;
     }
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (collectionView.tag == 11) {
+        int myIndex = indexPath.row % [[myModel allTypes] count];
+        NSString *selectedCatelogType = [[myModel allTypes] objectAtIndex:myIndex];
+        myModel.selectedCatlogType = selectedCatelogType;
+        [self.ItemsCollectionView reloadData];
+    }
+    else
+    {
+        int myIndex = indexPath.row % ([[myModel allItems] count] - 1);
+        NSString *itemName = [[myModel allItems] objectAtIndex:myIndex];
+        myModel.selectedItem = itemName;
+    }
+    return YES;
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (collectionView.tag == 22) {
-        
+    if (collectionView.tag != 11) {
+     
         UIViewController *contentVC = [[UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil] instantiateViewControllerWithIdentifier:@"ContainerID"];
-        contentVC.view.frame = CGRectMake(20, 175, 640, 785);
+        contentVC.view.frame = CGRectMake(0,
+                                          self.ProductsCollectionView.frame.size.height + 3.0f,
+                                          700,
+                                          800);
         [self addChildViewController:contentVC];
         [self.view addSubview:contentVC.view];
     }

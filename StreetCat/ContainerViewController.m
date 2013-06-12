@@ -8,11 +8,16 @@
 
 #import "ContainerViewController.h"
 #import <QuartzCore/CALayer.h>
-
+#import "ModalDataBase.h"
+#import "ScrollCollectionViewController.h"
 
 @interface ContainerViewController ()
+{
+    ModalDataBase *myModel;
+    ScrollCollectionViewController *scrollCVC;
+}
 
-@property (nonatomic, strong) NSArray *carImages;
+//@property (nonatomic, strong) NSArray *carImages;
 
 @end
 
@@ -29,13 +34,12 @@
 
 - (void) setUp
 {
-    self.carImages = [[NSArray alloc]initWithObjects:@"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg", @"6.jpg", @"7.jpg", @"8.jpg", @"9.jpg", @"10.jpg", @"11.jpg", @"12.jpg", @"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg", @"6.jpg", @"7.jpg", @"8.jpg", @"9.jpg", @"10.jpg", @"11.jpg", @"12.jpg", nil];
-    NSLog(@"setup...");
+    myModel =  [ModalDataBase sharedModel];
+    scrollCVC = [[ScrollCollectionViewController alloc]init];
 }
 
 - (void) loadView
 {
-    NSLog(@"laod view");
     [self setUp];
     [super loadView];
 }
@@ -46,12 +50,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.carousel.type = iCarouselTypeCoverFlow2;
-    
     self.backgroundView.layer.cornerRadius = 20;
-    
-    NSLog(@"container view was loaded.....");
-    
-   
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,27 +63,23 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    NSLog(@"count: %d",[self.carImages count]);
-    return [self.carImages count];
-    
+    return [[myModel  allItems] count] - 1;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    view = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.carImages objectAtIndex:index]]];
+    view = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[[myModel allItems] objectAtIndex:index]]];
     view.frame = CGRectMake(0, 0, 150, 100);
     return view;
 }
 
-- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
-{
-    
-    [UIView transitionWithView:(UIView *)self.image duration:1.0
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^{
-                        self.image.image =  [UIImage imageNamed:[self.carImages objectAtIndex:  carousel.currentItemIndex]];
-                    } completion:nil];
-}
+//- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel
+//{
+//    NSIndexPath *myIndexPath = [NSIndexPath indexPathForRow:carousel.currentItemIndex inSection:0];
+//    //[NSIndexPath indexPathForRow:carousel.currentItemIndex inSection:0]
+//    
+//    [scrollCVC.collectionView scrollToItemAtIndexPath:myIndexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+//}
 
 - (IBAction)swipe_right:(UISwipeGestureRecognizer *)sender {
     [self.carousel scrollToItemAtIndex:self.carousel.currentItemIndex - 1 animated:YES];

@@ -11,8 +11,6 @@
 @interface Level2_CVC : UIViewController <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *ProductsCollectionView;
-//@property (strong, nonatomic) IBOutlet UICollectionView *ThumbnailCollectionView;
-
-
+@property (strong, nonatomic) IBOutlet UICollectionView *ItemsCollectionView;
 
 @end

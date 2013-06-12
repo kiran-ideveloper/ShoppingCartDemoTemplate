@@ -8,9 +8,13 @@
 
 #import "Catelog_Level_1_CVC.h"
 #import "Catalog_Level_1_CVCell.h"
-
+#import "ModalDataBase.h"
+#import "Level2_CVC.h"
 
 @interface Catelog_Level_1_CVC ()
+{
+    ModalDataBase *myModel;
+}
 
 @end
 
@@ -29,6 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    myModel = [ModalDataBase sharedModel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,15 +51,41 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 40;
+    return 25;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
     Catalog_Level_1_CVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.catalogImage.image = [UIImage imageNamed:@"CatalogLevel1.png"];
+    if (indexPath.row % 2 == 0) {
+        cell.catalogImage.image = [UIImage imageNamed:
+                                   [[[myModel.catelog objectForKey:@"laptops"] objectForKey:@"Apple"] firstObject]];
+    }
+    else
+    {
+        cell.catalogImage.image = [UIImage imageNamed:
+                                   [[[myModel.catelog objectForKey:@"mobiles"] objectForKey:@"iPhone"] firstObject]];
+    }
+   
     return cell;
 }
+
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row % 2 == 0)
+    {
+        myModel.selectedCatlog = @"laptops";
+        myModel.selectedCatlogType = @"Apple";
+    }
+    else
+    {
+        myModel.selectedCatlog = @"mobiles";
+        myModel.selectedCatlogType = @"iPhone";
+    }
+    return YES;
+}
+
 
 @end

@@ -11,7 +11,6 @@
 
 @interface ContainerViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 - (IBAction)swipe_right:(UISwipeGestureRecognizer *)sender;
