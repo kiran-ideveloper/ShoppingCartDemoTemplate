@@ -1,0 +1,4 @@
+ShoppingCartDemoTemplate
+========================
+
+Using CollectionViewController
